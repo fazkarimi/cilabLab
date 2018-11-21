@@ -2,13 +2,15 @@ dist: trusty
 language: node_js
 node_js:
 - stable
- script:
- - npm run coverage
- branches:
-    only: development
+script:
+- npm run coverage
+after_success:
+ - npm run publish-coverage
+branches:
+only: development
 notifications:
- email:
-    recipients:
-    karimifazlu50@gmail.com
-    on_success: never        # default: change
-    on_failure: always       # default: always
+email:
+recipients:
+karimifazlu50@gmail.com
+on_success: never        # default: change
+on_failure: always       # default: always
