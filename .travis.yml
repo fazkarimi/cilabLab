@@ -3,16 +3,12 @@ language: node_js
 node_js:
 - stable
 script:
-    - npm run coverage
+ - npm run coverage
     after_success:
-    - npm run publish-coverage
-- npm run coverage
- - npm run publish-coverage
+- npm run publish-coverage
 branches:
 only: development
 notifications:
-email:
-recipients:
-karimifazlu50@gmail.com
+email:karimifazlu50@gmail.com
 on_success: never        # default: change
 on_failure: always       # default: always
